@@ -1,0 +1,13 @@
+body {
+	background: navy; /* add css file and js file in public */
+	color: white;
+	text-align: center;
+}
+h1,a {
+	color: yellow;
+}
+
+p {
+	width: 400px;
+	margin: 20px auto;
+}
