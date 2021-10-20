@@ -1,6 +1,7 @@
 <?php
 
 namespace Tests\Unit;
+namespace App\Http\Controllers;
 
 use PHPUnit\Framework\TestCase;
 
@@ -11,8 +12,18 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    // public function test_example()
+    // {
+    //     $this->assertTrue(true);
+    // }
+
+    /** @test */
+    public function add_two_numbers_function() 
     {
-        $this->assertTrue(true);
+        $s = new Sum();
+       
+        $s = $s->add(1,4);
+
+        $this->assertEquals(5, $s);
     }
 }
