@@ -16,14 +16,14 @@ class ExampleTest extends TestCase
     // {
     //     $this->assertTrue(true);
     // }
-
+ 
     /** @test */
     public function add_two_numbers_function() 
     {
         $s = new Sum();
        
         $s = $s->add(1,4);
-
-        $this->assertEquals(5, $s);
+        
+        $this->assertEquals($s,5);
     }
 }

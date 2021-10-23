@@ -14,7 +14,7 @@
 <body>
     
     <article>
-            <?= $post ?>
+      {{!! $post !!}}
     </article>
 
     <a href="/"> Go Back </a>

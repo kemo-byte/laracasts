@@ -12,12 +12,13 @@
     
 </head>
 <body>
-    <?php foreach ($posts as $post) { ?>
-  
+    
+    @foreach ($posts as $post)  
+    
     <article>
-        <?= $post ?>
+        {{!! $post !!}}
     </article>
 
-    <?php } ?>
+    @endforeach
 </body>
 </html>
