@@ -7,20 +7,27 @@
 
 	class Post {
 		public $title;
-		public 	$except;
+
+		public 	$excerpt;
+
 		public 	$date;
+
 		public $body;
+
+		public $slug;
 
 		public function __construct(
 			$title,
-			$except,
+			$excerpt,
 			$date,
-			$body
+			$body,
+			$slug
 		){
 			$this->title = $title;
-			$this->except = $except;
+			$this->excerpt = $excerpt;
 			$this->date = $date;
 			$this->body = $body;
+			$this->slug = $slug;
 		}
 		public static function all()
 		{
