@@ -12,5 +12,11 @@ class Post extends Model
     protected $fillable = ['title','excerpt','body'];
 
     // protected $guard = ['id'];
+
+
+    public function getRoutKeyName() {
+
+        return 'slug';
+    }
        
 }

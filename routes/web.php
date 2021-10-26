@@ -22,7 +22,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('posts/{post}', function (Post $post) {
+Route::get('posts/{post:Slug}', function (Post $post) {
 
    
 
