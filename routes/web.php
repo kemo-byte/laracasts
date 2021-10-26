@@ -24,7 +24,7 @@ Route::get('/', function () {
         logger($query->sql,$query->bindings); 
     });
     return view('posts',[
-        'posts' => Post::all()
+        'posts' => Post::with('category')->get()
     ]);
 });
 
