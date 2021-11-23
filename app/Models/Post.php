@@ -32,13 +32,39 @@ class Post extends Model
        return $this->belongsTo(User::class,'user_id');
     }
 
-    protected function scopeFilter($query, array $filters)
+    // public function scopeFilter($query)
+    // {
+       
+    //         if(request('search')) {
+    //             $query
+    //                 ->where('title', 'like', '%' . request('search') . '%')
+    //                 ->orWhere('body', 'like', '%' . request('search') . '%');
+    //         }
+    // }
+    public function scopeFilter($query, array $filters)
     {
+       // dd(request('search') === $filters[0]);
+        $query->when(request('search') ?? false , fn($query, $search) =>
+            $query
+                ->where('title', 'like', '%' . $search . '%')
+                ->orWhere('body', 'like', '%'. $search . '%'));
+        $query->when($filters['category'] ?? false, fn($query, $category) =>
 
-       $query->when($filters['search'] ?? false, function($query, $search ) {
-                $query
-                    ->where('title', 'like', '%' . request('search') . '%')
-                    ->orWhere('body', 'like', '%' . request('search')  . '%');
-            });
+            $query
+                ->whereExists(fn ($query) => 
+                    $query->from('categories')
+                    ->whereColumn('categories.id', 'posts.category_id')
+                    ->where('categories.slug', $category))
+    );
     }
+    // protected function scopeFilter($query, array $filters)
+    // {
+
+    //    $query->when($filters['search'] ?? false, function($query, $search ) {
+        
+    //             $query
+    //                 ->where('title', 'like', '%' . $search . '%')
+    //                 ->orWhere('body', 'like', '%' . $search . '%');
+    //         });
+    // }
 }
