@@ -44,6 +44,7 @@ class Post extends Model
     public function scopeFilter($query, array $filters)
     {
        // dd(request('search') === $filters[0]);
+
         $query->when($filters['search'] ?? false , fn($query, $search) =>
           $query->where(fn($query)=>
             $query
@@ -56,6 +57,10 @@ class Post extends Model
 
             $query->whereHas('category', fn ($query) => $query->where('slug',$category))
     );
+
+    $query->when($filters['author'] ?? false, fn($query, $author) =>
+
+        $query->whereHas('author', fn ($query) => $query->where('name',$author)));
     }
 
 
