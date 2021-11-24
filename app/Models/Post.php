@@ -44,8 +44,7 @@ class Post extends Model
     public function scopeFilter($query, array $filters)
     {
        // dd(request('search') === $filters[0]);
-
-        $query->when(request('search') ?? false , fn($query, $search) =>
+        $query->when($filters['search'] ?? false , fn($query, $search) =>
           $query->where(fn($query)=>
             $query
                 ->where('title', 'like', '%' . $search . '%')
@@ -53,7 +52,7 @@ class Post extends Model
 
 
 
-        $query->when(request('category') ?? false, fn($query, $category) =>
+        $query->when($filters['category'] ?? false, fn($query, $category) =>
 
             $query->whereHas('category', fn ($query) => $query->where('slug',$category))
     );
