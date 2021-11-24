@@ -26,7 +26,7 @@ Route::get('posts/{post:Slug}', [PostController::class, 'show']);
 
 Route::get('categories/{category:slug}', function(Category $category) {
 
-    return view('posts',[
+    return view('posts.index',[
 
         'posts' => $category->posts,
         'currentCategory' => $category,
@@ -37,7 +37,7 @@ Route::get('categories/{category:slug}', function(Category $category) {
 
 Route::get('authors/{author:username}', function(User $author) {
 
-    return view('posts',[
+    return view('posts.index',[
 
         'posts' => $author->posts,
         'categories' => Category::all()
