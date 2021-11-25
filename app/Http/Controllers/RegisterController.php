@@ -24,12 +24,16 @@ class RegisterController extends Controller
       ]);
 
 
-      // session()->flash('success','Your account successfuly created !');
+      $user = User::create($attributes);
 
-      // $attributes['password'] = bcrypt($attributes['password']);
-      // Illumniate/Support/Facades\Hash::check('p',$pass)
-      User::create($attributes);
+      auth()->login($user);
 
       return redirect('/')->with('success','Your account successfuly created !');
+
+
+            // session()->flash('success','Your account successfuly created !');
+
+            // $attributes['password'] = bcrypt($attributes['password']);
+            // Illumniate/Support/Facades\Hash::check('p',$pass)
     }
 }
