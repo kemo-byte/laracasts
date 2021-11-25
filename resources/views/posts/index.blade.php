@@ -1,5 +1,6 @@
 <x-layout>
 
+<section class="px-6 py-8">
 
 	@include('posts._header')
 
@@ -7,7 +8,7 @@
  	@if ($posts->count())
 
    		<x-posts-grid :posts="$posts" />
-			
+
 			<div class="">
 				{{	$posts->links()	}}
 			</div>
@@ -24,4 +25,6 @@
     </div> --}}
 </main>
 
+
+</section>
 </x-layout>
