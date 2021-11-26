@@ -19,6 +19,7 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 */
 
 Route::get('/',[PostController::class, 'index'])->name('home');
+Route::get('/home-test', fn() => view('components.home-test'));
 
 
 Route::get('posts/{post:Slug}', [PostController::class, 'show']);

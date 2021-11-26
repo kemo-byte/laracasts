@@ -1,5 +1,5 @@
 <x-layout>
- 
+
         <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
             <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-10">
                 <div class="col-span-4 lg:text-center lg:pt-14 mb-10">
@@ -13,7 +13,7 @@
                         <img src="/images/lary-avatar.svg" alt="Lary avatar">
                         <div class="ml-3 text-left">
                             <h5 class="font-bold">{{$post->author->name}}</h5>
-                           
+
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                         </a>
 
                         <div class="space-x-2">
-                            <x-category-button :category="$post->category" />                    
+                            <x-category-button :category="$post->category" />
                         </div>
                     </div>
 
@@ -48,6 +48,67 @@
                         {!! $post->body !!}
                     </div>
                 </div>
+
+
+
+                <section class="col-span-8 col-start-5 mt-10 space-y-6">
+                  <article class="flex bg-gray-100 p-6 border border-gray-200 rounded-xl space-x-4">
+                    <div class="flex-shrink-0">
+                      <img src="http://blog1.run/images/lary-newsletter-icon.svg" alt="" height="60" width="60" class="rounded-xl">
+                    </div>
+                    <div class="">
+                      <header class="mb-4">
+                        <h3 class="font-bold">Kamal Kafi</h3>
+                        <p class="text-xs">posted <time>8 minuite</time></p>
+                      </header>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                         elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Ut enim ad minim veniam, quis
+                        cupidatat non proident, sunt in culpa qui officia
+                        eserunt mollit anim id est laborum.</p>
+                    </div>
+                  </article>
+                </section>
+
+
+                <section class="col-span-8 col-start-5 mt-10 space-y-6">
+                  <article class="flex bg-gray-100 p-6 border border-gray-200 rounded-xl space-x-4">
+                    <div class="flex-shrink-0">
+                      <img src="http://blog1.run/images/lary-newsletter-icon.svg" alt="" height="60" width="60" class="rounded-xl">
+                    </div>
+                    <div class="">
+                      <header class="mb-4">
+                        <h3 class="font-bold">Kamal Kafi</h3>
+                        <p class="text-xs">posted <time>8 minuite</time></p>
+                      </header>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                         elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Ut enim ad minim veniam, quis
+                        cupidatat non proident, sunt in culpa qui officia
+                        eserunt mollit anim id est laborum.</p>
+                    </div>
+                  </article>
+                </section>
+
+
+                <section class="col-span-8 col-start-5 mt-10 space-y-6">
+                  <article class="flex bg-gray-100 p-6 border border-gray-200 rounded-xl space-x-4">
+                    <div class="flex-shrink-0">
+                      <img src="http://blog1.run/images/lary-newsletter-icon.svg" alt="" height="60" width="60" class="rounded-xl">
+                    </div>
+                    <div class="">
+                      <header class="mb-4">
+                        <h3 class="font-bold">Kamal Kafi</h3>
+                        <p class="text-xs">posted <time>8 minuite</time></p>
+                      </header>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                         elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Ut enim ad minim veniam, quis
+                        cupidatat non proident, sunt in culpa qui officia
+                        eserunt mollit anim id est laborum.</p>
+                    </div>
+                  </article>
+                </section>
             </article>
         </main>
     </section>
