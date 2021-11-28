@@ -52,63 +52,36 @@
 
 
                 <section class="col-span-8 col-start-5 mt-10 space-y-6">
-                  <article class="flex bg-gray-100 p-6 border border-gray-200 rounded-xl space-x-4">
-                    <div class="flex-shrink-0">
-                      <img src="http://blog1.run/images/lary-newsletter-icon.svg" alt="" height="60" width="60" class="rounded-xl">
-                    </div>
-                    <div class="">
-                      <header class="mb-4">
-                        <h3 class="font-bold">Kamal Kafi</h3>
-                        <p class="text-xs">posted <time>8 minuite</time></p>
+                  @auth
+                  <x-panel>
+                    <form action="/posts/{{ $post->slug }}/comments" method="POST">
+                      @csrf
+                      <header class="flex">
+                        <img src="/images/lary-avatar.svg" alt="avatar">
+                        <h2 class="ml-4">Want to participate?</h2>
                       </header>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                         elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam, quis
-                        cupidatat non proident, sunt in culpa qui officia
-                        eserunt mollit anim id est laborum.</p>
-                    </div>
-                  </article>
+
+                      <div class="mt-6">
+
+                          <textarea name="body" class="w-full text-sm focus:outline-none focus:ring" cols="30" rows="5" placeholder="Quick, Thing Of Something to Say"></textarea>
+                      </div>
+
+                      <div class="flex justify-end mt-6 pt-6 border-t border-gray-200">
+                        	<button type="submit" class="bg-blue-500 text-white uppercase font-semibold text-xs py-2 px-10 rounded-2xl hover:bg-blue-600">Post</button>
+                      </div>
+                    </form>
+                  </x-panel>
+
+                  @else
+                  <p>
+                      <a href="/register" class="hover:underline" >Register</a> or <a href="/login" class="hover:underline">log in</a> to leave a comment
+                  </p>
+                  @endauth
+                  @foreach ($post->comments as $comment)
+                    <x-post-comment :comment="$comment" />
+                  @endforeach
                 </section>
 
-
-                <section class="col-span-8 col-start-5 mt-10 space-y-6">
-                  <article class="flex bg-gray-100 p-6 border border-gray-200 rounded-xl space-x-4">
-                    <div class="flex-shrink-0">
-                      <img src="http://blog1.run/images/lary-newsletter-icon.svg" alt="" height="60" width="60" class="rounded-xl">
-                    </div>
-                    <div class="">
-                      <header class="mb-4">
-                        <h3 class="font-bold">Kamal Kafi</h3>
-                        <p class="text-xs">posted <time>8 minuite</time></p>
-                      </header>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                         elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam, quis
-                        cupidatat non proident, sunt in culpa qui officia
-                        eserunt mollit anim id est laborum.</p>
-                    </div>
-                  </article>
-                </section>
-
-
-                <section class="col-span-8 col-start-5 mt-10 space-y-6">
-                  <article class="flex bg-gray-100 p-6 border border-gray-200 rounded-xl space-x-4">
-                    <div class="flex-shrink-0">
-                      <img src="http://blog1.run/images/lary-newsletter-icon.svg" alt="" height="60" width="60" class="rounded-xl">
-                    </div>
-                    <div class="">
-                      <header class="mb-4">
-                        <h3 class="font-bold">Kamal Kafi</h3>
-                        <p class="text-xs">posted <time>8 minuite</time></p>
-                      </header>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                         elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam, quis
-                        cupidatat non proident, sunt in culpa qui officia
-                        eserunt mollit anim id est laborum.</p>
-                    </div>
-                  </article>
-                </section>
             </article>
         </main>
     </section>

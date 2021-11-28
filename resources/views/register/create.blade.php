@@ -5,7 +5,7 @@
       <form class="mt-10" action="/register" method="POST">
 
         @csrf
-
+      
         <div class="mb-6">
           <label for="name" class="block mb-2 uppercase font-bold text-xs text-gray-700">name</label>
           <input type="text" class="border border-gray-400 p-2 w-full" name="name" value="{{old('name')}}" id="name" required>
@@ -49,7 +49,7 @@
 
 
 
-        
+
 
         <!-- @if($errors->any())
 
