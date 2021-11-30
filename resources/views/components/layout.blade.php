@@ -1,5 +1,5 @@
 <!doctype html>
-
+<html style="scroll-behavior:smooth">
 <title>Laravel From Scratch Blog</title>
 <link href="{{asset('tailwind.min.css')}}" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -70,3 +70,4 @@
     <x-flash-message />
 
 </body>
+</html>
