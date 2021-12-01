@@ -1,38 +1,35 @@
 <x-layout>
 
-  <section class="py-8 max-w-md mx-auto">
-    <h1 class="text-lg font-bold mb-4">Publish A New Post</h1>
-    <x-panel>
-      <form  action="/admin/posts" method="post" enctype="multipart/form-data">
-        @csrf
-        <x-form.input name="title" />
-        <x-form.input name="slug" />
-        <x-form.textarea name="excerpt" />
-        <x-form.textarea name="body" />
+  <x-setting heading="Publish New Post">
 
-        <x-form.field>
-          <x-form.label name="category_id"/>
-          <select
-           name="category_id" id="category_id">
+    <form  action="/admin/posts" method="post" enctype="multipart/form-data">
+      @csrf
+      <x-form.input name="title" />
+      <x-form.input name="slug" />
+      <x-form.textarea name="excerpt" />
+      <x-form.textarea name="body" />
 
-            @foreach (\App\Models\Category::all() as $category)
-            	<option value="{{ $category->id }}"
-                  {{ old("category_id") == $category->id ? "selected" :"" }}
-                > {{ $category->name }}</option>
-            @endforeach
+      <x-form.field>
+        <x-form.label name="category_id"/>
+        <select
+         name="category_id" id="category_id">
 
-          </select>
+          @foreach (\App\Models\Category::all() as $category)
+            <option value="{{ $category->id }}"
+                {{ old("category_id") == $category->id ? "selected" :"" }}
+              > {{ $category->name }}</option>
+          @endforeach
 
-          <x-form.error name="category_id"/>
+        </select>
 
-        </x-form.field>
-        <x-form.input name="thumbnail" type="file" />
+        <x-form.error name="category_id"/>
 
-      <x-form.button>Publish</x-form.button>
-      </form>
+      </x-form.field>
+      <x-form.input name="thumbnail" type="file" />
+
+    <x-form.button>Publish</x-form.button>
+    </form>
 
 
-    </x-panel>
-  </section>
-
+  </x-setting>
 </x-layout>
