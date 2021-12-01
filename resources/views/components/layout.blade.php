@@ -20,7 +20,7 @@
                   <x-slot name="trigger">
                     <span class="text-xs font-bold uppercase " style="cursor:pointer ">Welcome ,{{ auth()->user()->name }} !</span>
                   </x-slot>
-                  <x-dropdown-item href="/" :active="request()->is('/')" >Dashboard </x-dropdown-item>
+                  <x-dropdown-item href="/admin/posts" :active="request()->is('/')" >Dashboard </x-dropdown-item>
                   <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')" >New Post</x-dropdown-item>
                   <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">Logout</x-dropdown-item>
 
