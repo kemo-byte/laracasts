@@ -20,9 +20,9 @@ class ExampleTest extends TestCase
     /** @test */
     public function add_two_numbers_function() 
     {
-        $s = new Sum();
+        // $s = new Sum();
        
-        $s = $s->add(1,4);
+        $s = (new Sum())->add(1,4);
         
         $this->assertEquals($s,5);
     }
