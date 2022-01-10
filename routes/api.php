@@ -22,6 +22,7 @@ use App\Http\Controllers\Api\AuthController;
 Route::group(['middleware'=>['auth:sanctum','api','checkPassword'],'prefix'=>'v1' , 'namespace'=>'Api'], function() {
   // Route::get('/users', fn() => ['name'=>'kamal']);
   Route::get('/users',[AuthController::class, 'index']);
+  
 });
 
 
